@@ -1,0 +1,263 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Playfair Display', serif;
+  background-color: #fff;
+  color: #000;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Pinturas artísticas no fundo */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  z-index: 0;
+  background: rgba(0, 0, 0, 0.07);
+  border-radius: 50% 30% 70% 40% / 40% 60% 30% 60%;
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+body::before {
+  top: -120px;
+  left: -120px;
+  width: 350px;
+  height: 350px;
+  transform: rotate(25deg);
+}
+
+body::after {
+  bottom: -120px;
+  right: -120px;
+  width: 450px;
+  height: 450px;
+  transform: rotate(-25deg);
+}
+
+/* Header estilo Vogue */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  border-bottom: 1px solid #ddd;
+  z-index: 1000;
+}
+
+.menu-toggle {
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.logo span {
+  color: rgb(122, 122, 122);
+}
+
+.logo-central {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.linkedin a {
+  font-weight: bold;
+  color: #000;
+  font-size: 1rem;
+}
+
+/* Menu lateral */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 220px;
+  height: 100%;
+  background-color: #fff;
+  border-right: 1px solid #ddd;
+  padding-top: 100px;
+  transition: left 0.3s ease;
+  z-index: 999;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.sidebar ul li a {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Texto central */
+.texto-sobre-imagem {
+  max-width: 600px;
+  margin: 4rem auto;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.texto-sobre-imagem h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.texto-sobre-imagem p {
+  font-size: 1.3rem;
+  line-height: 1.7;
+  color: #222;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .texto-sobre-imagem h2 {
+    font-size: 1.8rem;
+  }
+
+  .texto-sobre-imagem p {
+    font-size: 1rem;
+  }
+
+  .logo-central {
+    font-size: 1.5rem;
+  }
+
+  .linkedin {
+    position: absolute;
+    right: 2rem;
+  }
+
+  .projetos-ysl {
+    flex-direction: column;
+  }
+
+  .titulo-projeto {
+    font-size: 1.2rem;
+    left: 15px;
+    bottom: 15px;
+  }
+}
+
+/* Projetos estilo YSL */
+.projetos-ysl {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.projeto {
+  position: relative;
+  flex: 1;
+  min-width: 300px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.projeto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.projeto:hover img {
+  transform: scale(1.05);
+}
+
+.titulo-projeto {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  z-index: 2;
+  mix-blend-mode: difference;
+}
+
+/* Seções */
+.sobre,
+.contato {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.sobre h2,
+.contato h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Contato com fundo preto */
+.contato {
+  background-color: #000;
+  color: #fff;
+}
+
+.contato-item {
+  margin: 1rem 0;
+}
+
+.contato-item a {
+  color: white;
+  font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.contato-item a:hover {
+  color: #d33f25;
+}
+
+.contato-item i {
+  font-size: 1.4rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: #000;
+  border-top: 1px solid #eee;
+}
